@@ -1,23 +1,14 @@
-import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getLogin } from "../../redux/authentication/action";
 import { BASEURL } from "../../utils";
-import { toast } from "react-toastify";
 const SideBar = () => {
-	const [active, setActive] = useState<String>("users");
-	const [user1, setUser] = useState<any>({});
 	const [searchParam] = useSearchParams();
 	const userID = searchParam.get("userID") || "";
 
 	const dispatch = useDispatch();
-	const { user, isAuth } = useSelector((state: any) => state.authReducer);
-	const handleClick = (
-		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-	) => {
-		setActive(e.currentTarget.id);
-	};
+	const { user } = useSelector((state: any) => state.authReducer);
 
 	const handleLogout = () => {
 		console.log("logout");
@@ -36,8 +27,8 @@ const SideBar = () => {
 				<nav className='flex flex-col items-center flex-1 space-y-8 '>
 					<Link to='/home'>
 						<img
-							className='w-auto h-6'
-							src='https://merakiui.com/images/logo.svg'
+							className='w-auto '
+							src='https://st4.depositphotos.com/25790974/28296/v/600/depositphotos_282968620-stock-illustration-devil-logo-vector.jpg'
 							alt=''
 						/>
 					</Link>
@@ -45,7 +36,6 @@ const SideBar = () => {
 					<Link
 						to='/home'
 						className='p-1.5 inline-block text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100'
-						onClick={handleClick}
 						id='home'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -65,7 +55,6 @@ const SideBar = () => {
 					<Link
 						to='/users'
 						className='p-1.5 inline-block  text-gray-500 transition-colors duration-200 rounded-lg dark:text-blue-400 dark:bg-gray-800'
-						onClick={handleClick}
 						id='user'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -85,7 +74,6 @@ const SideBar = () => {
 					<Link
 						to={"/chart"}
 						className='p-1.5 inline-block text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100'
-						onClick={handleClick}
 						id='chart'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -110,7 +98,6 @@ const SideBar = () => {
 					<Link
 						to='/notification'
 						className='p-1.5 inline-block text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100'
-						onClick={handleClick}
 						id='notification'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -130,7 +117,6 @@ const SideBar = () => {
 					<Link
 						to='/setting'
 						className='p-1.5 inline-block text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100'
-						onClick={handleClick}
 						id='setting'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
