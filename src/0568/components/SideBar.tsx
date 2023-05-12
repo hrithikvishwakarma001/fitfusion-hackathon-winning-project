@@ -1,19 +1,40 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useSearchParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getLogin } from "../../redux/authentication/action";
+import { BASEURL } from "../../utils";
+import { toast } from "react-toastify";
 const SideBar = () => {
 	const [active, setActive] = useState<String>("users");
+	const [user1, setUser] = useState<any>({});
+	const [searchParam] = useSearchParams();
+	const userID = searchParam.get("userID") || "";
+
+	const dispatch = useDispatch();
+	const { user, isAuth } = useSelector((state: any) => state.authReducer);
 	const handleClick = (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
 		setActive(e.currentTarget.id);
 	};
-	
+
+	const handleLogout = () => {
+		console.log("logout");
+		alert("you are logout");
+		window.open(`${BASEURL}/auth/logout`, "_self");
+	};
+
+	React.useEffect(() => {
+		const paramObj = { params: { userID } };
+		userID && dispatch<any>(getLogin(paramObj));
+	}, [dispatch, userID]);
+
 	return (
 		<aside className='flex'>
 			<div className='flex flex-col items-center w-16 h-screen py-8 bg-white dark:bg-gray-900 dark:border-gray-700'>
 				<nav className='flex flex-col items-center flex-1 space-y-8 '>
-					<Link to='/'>
+					<Link to='/home'>
 						<img
 							className='w-auto h-6'
 							src='https://merakiui.com/images/logo.svg'
@@ -133,16 +154,23 @@ const SideBar = () => {
 				</nav>
 
 				<div className='flex flex-col items-center mt-4 space-y-4'>
-					<Link to='/profile'>
-						<img
-							className='object-cover w-8 h-8 rounded-lg'
-							src='https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&h=634&q=80'
-							alt='avatar'
-						/>
-					</Link>
- 
+					{user && (
+						<Link to='/profile'>
+							<img
+								className='object-cover w-8 h-8 rounded-lg'
+								src={
+									user?.img
+										? user.img
+										: "https://www.customguide.com/img/user-images/generic-profile.png"
+								}
+								alt='avatar'
+							/>
+						</Link>
+					)}
+
 					<button
-						className='text-gray-500 transition-colors duration-200 rotate-180 dark:text-gray-400 rtl:rotate-0 hover:text-blue-500 dark:hover:text-blue-400'>
+						className='text-gray-500 transition-colors duration-200 rotate-180 dark:text-gray-400 rtl:rotate-0 hover:text-blue-500 dark:hover:text-blue-400'
+						onClick={handleLogout}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							fill='none'
@@ -213,8 +241,7 @@ const SideBar = () => {
 
 						<Link
 							className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'
-							to='/analytics'
-              >
+							to='/analytics'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								fill='none'
@@ -242,8 +269,7 @@ const SideBar = () => {
 
 						<Link
 							className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'
-							to='/guides'
-              >
+							to='/guides'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								fill='none'
@@ -265,8 +291,7 @@ const SideBar = () => {
 
 						<Link
 							className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'
-              to='/blog'
-              >
+							to='/blog'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								fill='none'
@@ -288,8 +313,7 @@ const SideBar = () => {
 
 						<Link
 							className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'
-							to='/checklist'
-              >
+							to='/checklist'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								fill='none'
@@ -315,9 +339,7 @@ const SideBar = () => {
 							Customization
 						</label>
 
-						<button
-							className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'
-							>
+						<button className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								fill='none'
@@ -339,8 +361,7 @@ const SideBar = () => {
 
 						<Link
 							className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'
-							to='/setting'
-              >
+							to='/setting'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								fill='none'
