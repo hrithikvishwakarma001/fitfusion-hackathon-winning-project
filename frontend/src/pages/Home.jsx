@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import SideBar from "../0568/components/SideBar";
 import Content from "../0568/components/Content";
 import Exercise from "../0568/components/Exercise";
+import Chart from "../0568/pages/Charts";
+import Forum from "../0568/pages/Forum";
 
 const Home = () => {
 	return (
@@ -15,13 +17,13 @@ const Home = () => {
 						path='/dashboard/exercise/:query'
 						element={<Exercise />}
 					/>
-					<Route path='/users' element={<h1>users</h1>} />
+					<Route path='/discussion' element={<Forum/>} />
 					<Route
 						path='/notification'
 						element={<h1>notification</h1>}
 					/>
-					<Route path='/chart' element={<h1>chart</h1>} />
-					<Route path='/analytics' element={<h1>analytics</h1>} />
+					<Route path='/chart' element={<Chart />} />
+					<Route path='performance' element={<Chart />} />
 					<Route path='/guides' element={<h1>guides</h1>} />
 					<Route path='/checklist' element={<h1>checklist</h1>} />
 				</Routes>
