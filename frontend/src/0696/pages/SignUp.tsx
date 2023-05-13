@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { BASEURL } from "../../utils";
 
 const initialState = {
 	username: "",
@@ -23,7 +24,7 @@ export default function SignUp() {
 	};
 
 	const handleGoogleLogin = () => {
-		window.open("http://localhost:4000/auth/google", "_self");
+		window.open(`${BASEURL}/auth/google`, "_self");
 	};
 	return (
 		<section className='h-screen  bg-slate-200 flex-1 align-center'>

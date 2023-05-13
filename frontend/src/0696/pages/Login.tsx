@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BASEURL } from "../../utils";
 
 const initialState = {
 	email: "",
@@ -21,7 +22,7 @@ export default function Login() {
 	};
 
   const handleGoogleLogin = () => {
-     window.open("http://localhost:4000/auth/google", "_self")
+     window.open(`${BASEURL}/auth/google`, "_self");
   };
 	return (
 		<section className=' h-screen  bg-slate-200 flex-1 align-center'>
