@@ -53,7 +53,7 @@ const SideBar = () => {
 					</Link>
 
 					<Link
-						to='/users'
+						to='/discussion'
 						className='p-1.5 inline-block  text-gray-500 transition-colors duration-200 rounded-lg dark:text-blue-400 dark:bg-gray-800'
 						id='user'>
 						<svg
@@ -227,7 +227,7 @@ const SideBar = () => {
 
 						<Link
 							className='flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700'
-							to='/analytics'>
+							to='performance'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								fill='none'
@@ -243,7 +243,7 @@ const SideBar = () => {
 							</svg>
 
 							<span className='mx-2 text-sm font-medium'>
-								Preformance
+								Performance
 							</span>
 						</Link>
 					</div>

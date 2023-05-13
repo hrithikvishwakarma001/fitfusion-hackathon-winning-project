@@ -8,6 +8,8 @@ const ExerciseCard = ({
 	name,
 	target
 }: any) => {
+	let nameString = name.split("").slice(0, 30).join("");
+	if(name.length > 30) nameString += "..."
 	return (
 		<div className='max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800'>
 			<div className='px-4 py-2'>
@@ -16,7 +18,7 @@ const ExerciseCard = ({
 				</h1>
 				<p className='mt-1 text-sm text-gray-600 dark:text-gray-400'>
 					{/* {bodyPart} */}
-          {name}
+					{nameString}
 				</p>
 			</div>
 
