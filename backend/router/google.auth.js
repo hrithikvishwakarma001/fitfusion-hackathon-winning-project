@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const UserModel=require("../models/usermodel")
 let RedirectLink = `http://localhost:3000/home`
 let RedirectLink2 = `http://localhost:3000/`
-
+// https://fitfusion.vercel.app/
 GoogleRouter.get("/google", passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 
