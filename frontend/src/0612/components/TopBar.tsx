@@ -5,7 +5,7 @@ export const TopBar = () => {
 return (
     <div className="px-5 py-2 bg-blue-200 ">
     <ul className="flex gap-10 justify-center ">
-        <Link to="/video">
+        <Link to="/">
             <li className="hover:bg-sky-700 py-1 px-3 rounded hover:text-white ">Video</li>
         </Link>
         <Link to="/blogs">

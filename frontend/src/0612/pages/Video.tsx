@@ -155,7 +155,7 @@ const video = [
 
 export const Video = () => {
   return (
-    <div className="p-10 grid  lg:grid-cols-3 xl:grid-cols-4 gap-10 sm:grid-cols-1 md:grid-cols-2 bg-#e2e8f0">
+    <div className='p-10 grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10'>
       {
         video.map((el)=><VideoComp Image={el.Image} link={el.link} Title={el.Title} Description={el.Description}/>)
       }
