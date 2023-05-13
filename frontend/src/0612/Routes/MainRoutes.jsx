@@ -6,7 +6,7 @@ import { Articles } from "../pages/Article"
 export const MainRoutes = () => {
   return(
     <Routes>
-      <Route path="/video" element={<Video/>}></Route>
+      <Route path="/" element={<Video/>}></Route>
       <Route path="/blogs" element={<Blogs/>}></Route>
       <Route path="/articles" element={<Articles/>}></Route>
     </Routes>
