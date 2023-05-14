@@ -6,6 +6,7 @@ import Exercise from "../0568/components/Exercise";
 import Chart from "../0568/pages/Charts";
 import Forum from "../0568/pages/Forum";
 import Checklist from "../0696/pages/CheckList";
+import HomePage from "../0712/pages/HomePage";
 
 const Home = () => {
 	return (
@@ -27,6 +28,7 @@ const Home = () => {
 					<Route path='performance' element={<Chart />} />
 					<Route path='/guides' element={<h1>guides</h1>} />
 					<Route path='/checklist' element={<Checklist/>} />
+					<Route path='/home' element={<HomePage/>} />
 				</Routes>
 			</div>
 		</div>
