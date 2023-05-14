@@ -3,7 +3,7 @@ import {Footer} from "flowbite-react"
 import { BsFacebook,BsInstagram,BsTwitter, BsGithub,BsDribbble} from "react-icons/bs";
 const FooterBar = () => {
   return (
-    <div><Footer container={true} style={{backgroundColor:"black",marginTop:"20px"}}>
+    <div><Footer container={true} style={{marginTop:"20px"}}>
     <div className="w-full">
       <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
         <div>
@@ -19,10 +19,10 @@ const FooterBar = () => {
             <Footer.Title title="about" />
             <Footer.LinkGroup col={true}>
               <Footer.Link href="#">
-                Flowbite
+                FitFusion
               </Footer.Link>
               <Footer.Link href="#">
-                Tailwind CSS
+                BMI
               </Footer.Link>
             </Footer.LinkGroup>
           </div>

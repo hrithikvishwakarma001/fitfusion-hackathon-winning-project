@@ -4,7 +4,7 @@ import img1 from "../components/Image/home-bg-1.jpg"
 import img4 from "../components/Image/banner-bg.jpg"
 const Slider = () => {
   return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96" style={{height:"85vh"}}>
+    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96" style={{height:"75vh"}}>
     <Carousel slideInterval={3000}>
       <img
         src={img1}
