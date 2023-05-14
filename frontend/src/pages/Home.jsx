@@ -7,6 +7,7 @@ import Chart from "../0568/pages/Charts";
 import Forum from "../0568/pages/Forum";
 import Checklist from "../0696/pages/CheckList";
 import HomePage from "../0712/pages/HomePage";
+import BmiPage from "../0712/pages/BmiPage";
 
 const Home = () => {
 	return (
@@ -29,6 +30,7 @@ const Home = () => {
 					<Route path='/guides' element={<h1>guides</h1>} />
 					<Route path='/checklist' element={<Checklist/>} />
 					<Route path='/home' element={<HomePage/>} />
+					<Route path='/home/bmi' element={<BmiPage/>} />
 				</Routes>
 			</div>
 		</div>
