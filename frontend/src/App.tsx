@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Router from "./routes/Router";
 import { Education } from "./0612/pages/Education";
 import Checklist from "./0696/pages/CheckList";
-
+ import "react-toastify/dist/ReactToastify.css";
 function App() {
 	const location = useLocation();
 	const pathName = location.pathname;

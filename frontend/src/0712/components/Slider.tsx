@@ -1,41 +1,43 @@
-import React from 'react'
-import {Carousel} from "flowbite-react"
-import img1 from "../components/Image/home-bg-1.jpg"
-import img4 from "../components/Image/banner-bg.jpg"
+import React from "react";
+import { Carousel } from "flowbite-react";
 const Slider = () => {
-  return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96" style={{height:"75vh"}}>
-    <Carousel slideInterval={3000}>
-      <img
-        src={img1}
-        alt="..."
-        style={{height:"100%"}}
-      />
-      <img
-        src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_630,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_img_5.png"
-        alt="..."
-        style={{height:"100%"}}
-      />
-      <img
-        src="https://xbr-fitness.com/wp-content/uploads/2020/11/Nutrition-information-and-knowledge.jpg"
-        alt="..."
-        style={{height:"100%"}}
-      />
-      <img
-        src={img4}
-        alt="..."
-        style={{height:"100%"}}
-      />
-      <img
-        src="https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_630,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/image_zoom_widget/image_zoom_widget_img_1.png"
-        alt="..."
-      />
-      {/* <video autoPlay>
-        <source src='https://uploads-ssl.webflow.com/6374d130aeb3b3a67943d20c/637df29c9f3c7940431d0863_LikeAPro%20loop%20v2%20(16-9)%20(2)-transcode.mp4'></source>
-      </video> */}
-    </Carousel>
-  </div>
-  )
-}
+	return (
+		<div
+			className='container-fluid
+       w-[98%]
+       h-2/3
+       m-5 
+      '>
+			<Carousel slideInterval={3000}>
+				<img
+					src='/img-1.jpg'
+					alt='...'
+					style={{ width: "100%" }}
+				/>
+				<img
+					src={"/img-2.jpg"}
+					alt='...'
+					style={{ width: "100%" }}
+				/>
+				{/* <img
+					src='https://img.freepik.com/free-photo/young-fitness-man-studio_7502-5007.jpg?w=1380&t=st=1684131502~exp=1684132102~hmac=c1b66c127c771e4e10a853fd63f20d61baea14d9f456127e7562e593141e21d7'
+					alt='...'
+					style={{ width: "100%" }}
+				/>
+				<img
+					src={
+						"https://img.freepik.com/free-photo/muscular-sportsman-building-biceps-with-dumbbell_7502-4784.jpg?w=1380&t=st=1684131048~exp=1684131648~hmac=5af4a284355f1311b03fa5e25fc416886a24074340d06c35de53952c16b3e3cb"
+					}
+					alt='...'
+					style={{ width: "100%" }}
+				/>
+				<img
+					src='https://img.freepik.com/free-photo/portrait-muscled-woman-training-with-barbell-isolated-purple-background-neon-light_155003-45819.jpg?w=1060&t=st=1684130907~exp=1684131507~hmac=ae03b5302752dc840505248988686b7dbbffbf5c69e4e2d28c6b5ff88294f046'
+					alt='...'
+				/> */}
+			</Carousel>
+		</div>
+	);
+};
 
-export default Slider
+export default Slider;

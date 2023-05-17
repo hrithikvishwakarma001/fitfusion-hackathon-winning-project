@@ -25,7 +25,7 @@ function AddTask({ addTask }:any) {
         }
 
         const task = {
-            id: Number,
+            id: Math.floor(Math.random() * 10000) + 1,
             body: taskText,
             check: false
         };

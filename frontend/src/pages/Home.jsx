@@ -11,7 +11,7 @@ import BmiPage from "../0712/pages/BmiPage";
 
 const Home = () => {
 	return (
-		<div className='flex flex-row w-full h-screen bg-slate-100 '>
+		<div className='flex flex-row w-full h-screen bg-slate-200 '>
 			<SideBar />
 			<div className='flex flex-col w-full h-full overflow-y-auto align-center'>
 				<Routes>

@@ -13,7 +13,7 @@ export default function BarChart({ state }: { state: any }) {
 							className='inline-block mb-5'>
 							<div className='flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50'>
 								<svg
-									className='w-10 h-10 text-deep-purple-accent-400'
+									className='w-10 h-10 text-purple-400'
 									stroke='currentColor'
 									viewBox='0 0 52 52'>
 									<polygon
@@ -26,11 +26,11 @@ export default function BarChart({ state }: { state: any }) {
 								</svg>
 							</div>
 						</a>
-						<h5 className='mb-4 text-4xl font-extrabold leading-none'>
+						<h5 className='mb-4 text-4xl  text-gray-900 font-extrabold leading-none'>
 							Weekly Progress
-							<br className='hidden md:block' />
+							<br className='hidden md:block  text-gray-900' />
 							and Improve by practicing
-							<span className='inline-block text-deep-purple-accent-400'>
+							<span className='inline-block text-deep-purple-accent-400  text-gray-900'>
 								on this chart
 							</span>
 						</h5>

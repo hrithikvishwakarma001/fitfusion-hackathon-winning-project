@@ -16,7 +16,7 @@ const PORT = process.env.PORT;
 
 app.use(
 	cors({
-		origin: "http://localhost:3000",
+		origin: "https://fitfusion.vercel.app",
 		methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
 		allowedHeaders: [
 			"Content-Type",
