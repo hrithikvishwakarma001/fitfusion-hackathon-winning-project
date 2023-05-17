@@ -76,7 +76,6 @@ function Todo() {
         setTasks([...tasks, task]);
     }
 
-
     return(
         <VStack p={4} minH='100vh' pb={28}>
 

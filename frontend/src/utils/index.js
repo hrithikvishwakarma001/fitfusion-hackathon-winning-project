@@ -1,3 +1,3 @@
-export const BASEURL = "http://localhost:4000";
+export const BASEURL = "https://fitfusion-44aa.onrender.com";
 
-// "https://fitfusion-44aa.onrender.com";
+// https://fitfusionbackend.onrender.com
