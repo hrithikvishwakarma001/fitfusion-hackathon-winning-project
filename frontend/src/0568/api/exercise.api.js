@@ -1,14 +1,13 @@
 import axios from "axios";
+import { EXCERCISE_API } from "../../utils";
 
-const BASEURL = "https://boiled-glorious-ox.glitch.me";
-// https://boiled-glorious-ox.glitch.me
 // bodypart, equipment, target, exercise
 const cache = {};
 export const getExercises = async () => {
 	try {
 		const response = await axios.request({
 			method: "GET",
-			url: `${BASEURL}/exercise`,
+			url: `${EXCERCISE_API}/exercise`,
 		});
 		return response.data;
 	} catch (error) {
@@ -17,7 +16,7 @@ export const getExercises = async () => {
 };
 
 export const getBodyPartList = async () => {
-	const url = `${BASEURL}/bodypart`;
+	const url = `${EXCERCISE_API}/bodypart`;
 	try {
 		const response = await axios.request({
 			method: "GET",
@@ -30,7 +29,7 @@ export const getBodyPartList = async () => {
 };
 
 export const getLIstByBodyPart = async (bodyPart, page = 1) => {
-	const url = `${BASEURL}/exercise?bodyPart=${bodyPart}`;
+	const url = `${EXCERCISE_API}/exercise?bodyPart=${bodyPart}`;
 	try {
 		const response = await axios.get(url, {
 			params: { bodyPart}
@@ -42,7 +41,7 @@ export const getLIstByBodyPart = async (bodyPart, page = 1) => {
 };
 
 export const getEquipmentList = async () => {
-	const url = `${BASEURL}/equipment`;
+	const url = `${EXCERCISE_API}/equipment`;
 
 	try {
 		const response = await axios.request({
@@ -56,7 +55,7 @@ export const getEquipmentList = async () => {
 };
 
 export const getListByEquipment = async (equipment) => {
-	const url = `${BASEURL}/exercise?equipment=${equipment}`;
+	const url = `${EXCERCISE_API}/exercise?equipment=${equipment}`;
 	if (cache[equipment]) {
 		console.log("cache hit");
 		return cache[equipment];
@@ -75,7 +74,7 @@ export const getListByEquipment = async (equipment) => {
 };
 
 export const getMusculeTargetList = async () => {
-	const url = `${BASEURL}/target`;
+	const url = `${EXCERCISE_API}/target`;
 	try {
 		const response = await axios.request({
 			method: "GET",
@@ -88,7 +87,7 @@ export const getMusculeTargetList = async () => {
 };
 
 export const getListByMusculeTarget = async (target) => {
-	const url = `${BASEURL}/exercise?target=${target}`;
+	const url = `${EXCERCISE_API}/exercise?target=${target}`;
 	if (cache[target]) {
 		console.log("cache hit");
 		return cache[target];
@@ -106,7 +105,7 @@ export const getListByMusculeTarget = async (target) => {
 };
 
 export const getListByName = async (name) => {
-	const url = `${BASEURL}/exercise?name=${name}`;
+	const url = `${EXCERCISE_API}/exercise?name=${name}`;
 
 	try {
 		const response = await axios.request({
