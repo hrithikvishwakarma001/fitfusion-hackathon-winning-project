@@ -21,13 +21,13 @@ const Home = () => {
 						element={<Exercise />}
 					/>
 					<Route path='/discussion' element={<Forum/>} />
-					<Route
+					{/* <Route
 						path='/notification'
 						element={<h1>notification</h1>}
-					/>
+					/> */}
 					<Route path='/chart' element={<Chart />} />
 					<Route path='performance' element={<Chart />} />
-					<Route path='/guides' element={<h1>guides</h1>} />
+					{/* <Route path='/guides' element={<h1>guides</h1>} /> */}
 					<Route path='/checklist' element={<Checklist/>} />
 					<Route path='/home' element={<HomePage/>} />
 					<Route path='/home/bmi' element={<BmiPage/>} />
