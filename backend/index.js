@@ -14,19 +14,7 @@ const PORT = process.env.PORT;
 
 //=============> MIDDLEWARES
 
-app.use(
-	cors({
-		origin: "https://fitfusion.vercel.app",
-		methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-		allowedHeaders: [
-			"Content-Type",
-			"Authorization",
-			"Access-Control-Allow-Credentials",
-			"Access-Control-Allow-Origin",
-		],
-		credentials: true,
-	})
-);
+app.use(cors());
 app.use(express.json());
 
 //=============> Testing endpoint

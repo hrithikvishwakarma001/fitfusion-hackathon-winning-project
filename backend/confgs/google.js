@@ -4,15 +4,14 @@ require('dotenv').config()
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
-
+const BACKEND_CALLBACK_URL = process.env.BACKEND_CALLBACK_URL;
 
 passport.use(
 	new GoogleStrategy(
 		{
 			clientID: GOOGLE_CLIENT_ID,
 			clientSecret: GOOGLE_CLIENT_SECRET,
-			callbackURL:
-				"https://fitfusion-44aa.onrender.com/auth/google/callback",
+			callbackURL: `${BACKEND_CALLBACK_URL}/auth/google/callback`,
 			scope: ["profile", "email"],
 		},
 		function (accessToken, refreshToken, profile, done) {
