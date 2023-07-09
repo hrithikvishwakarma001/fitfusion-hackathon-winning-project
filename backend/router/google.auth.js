@@ -3,9 +3,11 @@ const GoogleRouter = express.Router();
 const passport = require("../confgs/google");
 const bcrypt = require("bcrypt");
 const UserModel = require("../models/usermodel");
-let RedirectLink = `https://fitfusion.vercel.app/home`;
-let RedirectLink2 = `https://fitfusion.vercel.app/`;
-// https://fitfusion.vercel.app/
+require("dotenv").config();
+const FRONTEND_CALLBACK_URL = process.env.FRONTEND_CALLBACK_URL;
+let RedirectLink = `${FRONTEND_CALLBACK_URL}/home`;
+let RedirectLink2 = `${FRONTEND_CALLBACK_URL}`;
+
 GoogleRouter.get(
 	"/google",
 	passport.authenticate("google", { scope: ["profile", "email"] })
@@ -35,7 +37,7 @@ GoogleRouter.get("/login/success", async (req, res) => {
 		verified: true,
 	};
 	// console.log(userDetails)
-	console.log("Google Auth Accessed by" + userDetails.email);
+	console.log("Google Auth Accessed by " + userDetails.email);
 	try {
 		let user = await UserModel.find({ email: userDetails.email });
 		if (user.length !== 0) {
