@@ -1,5 +1,21 @@
-# 🦾 Fitfusion 
-> A complete fitness guidance 
+# FitFusion - Fitness Dashboard
+
+FitFusion is a fitness dashboard web application that provides users with a comprehensive platform to track and manage their fitness goals. Whether you're an athlete, fitness enthusiast, or just getting started on your wellness journey, FitFusion offers a range of features to help you stay motivated and achieve your fitness targets. This project is built using the MERN (MongoDB, Express.js, React.js, Node.js) stack, delivering a seamless and engaging user experience.
+Features
+
+    Track your fitness progress with a personalized dashboard.
+    Set and monitor fitness goals.
+    Log daily workouts and activities.
+    View detailed analytics and progress charts.
+    Connect with a community of like-minded fitness enthusiasts.
+    Access a library of workout routines and exercise demonstrations.
+
+Tech Stack
+
+   - Frontend: React.js
+   - Backend: Node.js, Express.js
+   - Database: MongoDB
+
 
 ### Signup page ( make sure you login or signup with only google )
 > ![image](https://github.com/hrithikvishwakarma001/fitfusion/assets/104666876/181babcc-5fd9-4b57-8e9c-63837d8642ca)
